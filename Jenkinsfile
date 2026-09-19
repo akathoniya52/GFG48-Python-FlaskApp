@@ -32,5 +32,10 @@ pipeline { // pipeline - gfg-pipeline
                sh 'docker run -dit --name webserver -p 80:80 gfg48-python-flaskapp '
             }
         }
+        stage('Deployment Completed Message') { // job 3
+            steps { // the series of command , which will be executed in this job
+              echo "Deployment Completed Successfully"
+            }
+        }
     }
 }
