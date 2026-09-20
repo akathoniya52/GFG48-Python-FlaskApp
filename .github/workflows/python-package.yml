@@ -42,7 +42,7 @@ jobs: # collection of jobs
   sonarqube-scanner: #job2
     name: SonarQube Scanner
     runs-on: ubuntu-latest
-    dependencies: [build]
+    depends-on: [build]
     
     steps:
       - uses: actions/checkout@v4 # v4.3.1
