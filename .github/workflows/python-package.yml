@@ -37,7 +37,12 @@ jobs: # collection of jobs
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest --coverage=app --cov-report=xml --cov-report=html
+
+    - name: Read Test Coverage Report
+      run: | 
+        ls
+        cat coverage.xml
 
   sonarqube-scanner: #job2
     name: SonarQube Scanner
