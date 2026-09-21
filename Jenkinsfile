@@ -4,7 +4,7 @@ pipeline { // pipeline - gfg-pipeline
     stages { // collection of jobs
         stage('Clone Git Repo') { // job 1
             steps { // the series of command , which will be executed in this job
-                git branch: 'main', url: 'https://github.com/sudhanshuvlog/GFG48-Python-FlaskApp.git'
+                git branch: 'main', url: 'https://github.com/akathoniya52/GFG48-Python-FlaskApp.git'
             }
         }
         stage('Install pip3') { // job 2

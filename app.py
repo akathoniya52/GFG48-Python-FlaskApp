@@ -1,18 +1,18 @@
 from flask import Flask
 
+
 def create_app():
     app = Flask(__name__)
     print("inside create_app function")
 
-    @app.route('/')
+    @app.route("/")
     def home():
         print("inside home function")
-        return 'Hi hi GFG48 19-09-2026 Hi hello12345678'
+        return "Hi hi GFG48 19-09-2026 Hi hello12345678"
 
     return app
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = create_app()
-
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)
