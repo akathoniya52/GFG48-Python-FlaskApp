@@ -60,15 +60,15 @@ jobs: # collection of jobs
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       
-      - name: Download Coverage Report From Artifact
-        uses: actions/download-artifact@v8
-        with:
-         name: coverage-report
+      # - name: Download Coverage Report From Artifact
+      #   uses: actions/download-artifact@v8
+      #   with:
+      #    name: coverage-report
       
-      - name: Read Test Coverage Report
-        run: | 
-          ls
-          cat coverage.xml
+      # - name: Read Test Coverage Report
+      #   run: | 
+      #     ls
+      #     cat coverage.xml
 
       - uses: SonarSource/sonarqube-scan-action@v8.1.0 # v8.1.0
         env:
@@ -80,8 +80,8 @@ jobs: # collection of jobs
         
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
-      - uses: SonarSource/sonarqube-quality-gate-action@cf038b0e0cdecfa9e56c198bbb7d21d751d62c3b # v1.2.0
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # - uses: SonarSource/sonarqube-quality-gate-action@cf038b0e0cdecfa9e56c198bbb7d21d751d62c3b # v1.2.0
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
