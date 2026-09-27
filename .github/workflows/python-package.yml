@@ -97,7 +97,9 @@ jobs: # collection of jobs
 
       - name: Fix Permissions for Docker Socket
         run: |
-          sudo usermod -aG docker worker
+          # sudo usermod -aG docker worker
+          docker ps
+          docker info
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
