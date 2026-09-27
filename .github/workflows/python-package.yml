@@ -98,6 +98,7 @@ jobs: # collection of jobs
       - name: Fix Permissions for Docker Socket
         run: |
           # sudo usermod -aG docker worker
+          newgrp docker
           docker ps
           docker info
       - name: Log in to Docker Hub
@@ -107,7 +108,7 @@ jobs: # collection of jobs
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
