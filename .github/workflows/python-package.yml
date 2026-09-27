@@ -94,7 +94,10 @@ jobs: # collection of jobs
           sudo yum install docker -y
           sudo systemctl start docker
           sudo systemctl enable docker
-          
+
+      - name: Fix Permissions for Docker Socket
+        run: |
+          sudo usermod -aG docker worker
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
