@@ -6,6 +6,8 @@ name: Python package
 on: #trigger point
   pull_request:
     branches: [ "main" ] 
+  push:
+    branches: [ "main" ] 
 
 jobs: # collection of jobs
   build: #job1
